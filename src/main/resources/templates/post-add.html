@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Добавление новой должности</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<form th:action="${'/post/add'}" method="post">
+  <input type="number" name="maxsalary" placeholder="максимальная зарплата">
+  <input type="checkbox" name="paid" placeholder="Платим за эту должность?">
+  <textarea name="namepost" placeholder="Наименование должности"></textarea>
+  <input type="number" name="salary" placeholder="Зарплата">
+  <input type="number" name="countemploey" placeholder="сколько таких сотрудников">
+  <br>
+  <button type="submit">Добавить статью</button>
+</form>
+</body>
+</html>

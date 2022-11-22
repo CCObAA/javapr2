@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Getting Started: Serving Web Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Все сотрудники</h1>
+<form method="post" th:action="${'/employee/filter'}">
+  <input type="text" name="surname">
+  <button type="submit">Найти</button>
+  <div th:each="el : ${result}">
+  <p th:text="${el.surname}"></p>
+  <p th:text="${el.height}"></p>
+  <p th:text="${el.lovecookie}"></p>
+  <p th:text="${el.favnumber}"></p>
+  <p th:text="${el.weight}"></p>
+  </div>
+
+</form>
+<div th:each="el : ${employees}">
+<p th:text="${el.surname}"></p>
+<p th:text="${el.height}"></p>
+<p th:text="${el.lovecookie}"></p>
+<p th:text="${el.favnumber}"></p>
+<p th:text="${el.weight}"></p>
+</div>
+
+  <form th:action="${'/employee/add'}" method="post">
+    <input type="text" name="surname" placeholder="Введите Фамилию">
+    <input type="number" name="height" placeholder="Рост">
+    <input type="checkbox" name="lovecookie" placeholder="Люблю печенье?">
+    <input type="number" name="favnumber" placeholder="Любимое число">
+    <input type="number" name="weight" placeholder="Вес">
+    <br>
+    <button type="submit">Добавить сотрудника</button>
+  </form>
+
+</body>
+</html>
